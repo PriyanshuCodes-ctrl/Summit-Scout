@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore Treks | Summit Scout</title>
+<meta name="description" content="Browse all 13 Summit Scout treks — search, filter by difficulty and sort by altitude, distance or duration.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="treks">
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="field-tab">The route library</div>
+    <h1>Explore all treks</h1>
+    <p>Browse the complete 13-trek collection, search and sort by what matters to your plan, then open any trek for a full route dossier.</p>
+  </div>
+</section>
+
+<main class="container main">
+  <div class="treks-controls">
+    <div class="filter-group">
+      <button class="active" data-filter="All">All 13</button>
+      <button data-filter="Beginner">Beginner</button>
+      <button data-filter="Moderate">Moderate</button>
+      <button data-filter="Difficult">Difficult</button>
+      <button data-filter="Extreme">Extreme</button>
+    </div>
+    <div class="search-field">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+      <input type="search" id="trekSearch" placeholder="Search by name or region">
+    </div>
+    <select id="trekSort" class="sort-field"></select>
+    <span class="filter-count" id="trekCount">13 treks</span>
+  </div>
+  <div class="grid" id="allTreks"></div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/treks.js"></script>
+</body>
+</html>

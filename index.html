@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Summit Scout — a route dossier for Himalayan treks, with a 3D terrain explorer, personal planning estimates and a trek comparison tool.">
+<title>Summit Scout | Himalayan Trek Intelligence</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<header id="site-header"></header>
+
+<section class="hero">
+  <svg class="hero-contours" viewBox="0 0 1240 640" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M-20 520 C 220 470, 380 560, 620 500 S 1040 430, 1260 480" opacity=".18"/>
+      <path d="M-20 560 C 240 510, 400 600, 640 540 S 1060 470, 1260 520" opacity=".14"/>
+      <path d="M-20 600 C 260 550, 420 640, 660 580 S 1080 510, 1260 560" opacity=".1"/>
+      <path d="M-20 480 C 200 430, 360 520, 600 460 S 1020 390, 1260 440" opacity=".22"/>
+    </g>
+  </svg>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="field-tab">Himalayan field intelligence</div>
+      <h1>Route intelligence for Himalayan expeditions.</h1>
+      <p>Thirteen surveyed routes, a 3D terrain explorer, personal planning estimates and a comparison tool — one dossier for every trek you're weighing up.</p>
+      <div class="actions">
+        <a class="button button-primary" href="planner.html">Plan a trek</a>
+        <a class="button button-secondary" href="treks.html">Browse all treks</a>
+      </div>
+    </div>
+    <div class="route-plate" id="featuredRoute"></div>
+  </div>
+</section>
+
+<main class="container main">
+  <div class="instrument-strip">
+    <div class="instrument">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 19h20L15.5 7l-4 6.5L9 10 2 19Z" stroke-linejoin="round"/><path d="M5 19l2.5-4" stroke-linecap="round"/></svg>
+      <div><strong>Route intelligence</strong><small>Altitude, distance, terrain and a computed difficulty score for all 13 routes.</small></div>
+    </div>
+    <div class="instrument">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke-linejoin="round"/><path d="M12 3v9M12 12l8-4.5M12 12l-8-4.5M12 12v9" stroke-linejoin="round"/></svg>
+      <div><strong>3D route explorer</strong><small>Rotate the terrain, inspect every camp and fly straight to the summit marker.</small></div>
+    </div>
+    <div class="instrument">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15a8 8 0 1 1 16 0" stroke-linecap="round"/><path d="M12 15l4-5" stroke-linecap="round"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
+      <div><strong>Personal estimates</strong><small>Calorie needs, BMI and a per-day trip budget, built from your profile.</small></div>
+    </div>
+    <div class="instrument">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.5h6v2H9z" fill="currentColor" stroke="none"/><path d="M8.5 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><strong>Preparation checklist</strong><small>A gear checklist that remembers what you've packed, per trek.</small></div>
+    </div>
+    <div class="instrument">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="5" width="8" height="14" rx="2"/><path d="M7 9v6M17 9v6" stroke-linecap="round"/></svg>
+      <div><strong>Compare &amp; shortlist</strong><small>Weigh up to three routes side by side and save your favourites.</small></div>
+    </div>
+  </div>
+
+  <section class="find">
+    <div class="field-tab">Find your route</div>
+    <h2>Which trek fits your plan?</h2>
+    <p>Answer three quick questions and get a route recommendation from the Summit Scout collection.</p>
+    <form class="find-form" id="findTrek">
+      <div class="field"><label>Experience</label><select name="level"><option value="Any">Any level</option><option>Beginner</option><option>Moderate</option><option>Difficult</option><option>Extreme</option></select></div>
+      <div class="field"><label>Maximum altitude</label><select name="altitude"><option value="3500">Up to 3,500 m</option><option value="4000">Up to 4,000 m</option><option value="5000" selected>Up to 5,000 m</option><option value="5500">Up to 5,500 m</option></select></div>
+      <div class="field"><label>Available days</label><select name="days"><option value="3">3 days</option><option value="5" selected>5 days</option><option value="7">7 days</option><option value="10">10 days</option><option value="12">12+ days</option></select></div>
+      <button class="button button-primary" type="submit">Find my trek</button>
+    </form>
+    <div id="findResult"></div>
+  </section>
+
+  <div class="section-head">
+    <div><div class="field-tab">Curated collection</div><h2>Featured treks</h2></div>
+    <a class="muted" href="treks.html">View all 13 treks →</a>
+  </div>
+  <div class="grid" id="curatedTreks"></div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>

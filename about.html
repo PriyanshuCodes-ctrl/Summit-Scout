@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About | Summit Scout</title>
+<meta name="description" content="Summit Scout is a portfolio route-planning concept for Himalayan treks.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="about">
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="field-tab">Project overview</div>
+    <h1>Explore smarter.</h1>
+    <p>Summit Scout is a portfolio-ready route-planning concept that brings trek data, a 3D terrain explorer, personal estimates and a comparison tool into one dossier-style product.</p>
+  </div>
+</section>
+
+<main class="container main">
+  <div class="about-grid">
+    <div class="panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 19h20L15.5 7l-4 6.5L9 10 2 19Z" stroke-linejoin="round"/></svg>
+      <h2>Data driven</h2>
+      <p>Route difficulty is computed from altitude, distance and the project's own planning indicators, across all 13 treks.</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z" stroke-linejoin="round"/><path d="M12 12v9M12 12l8-4.5M12 12l-8-4.5" stroke-linejoin="round"/></svg>
+      <h2>Explorable in 3D</h2>
+      <p>A dedicated Three.js terrain view lets you rotate each route, inspect waypoints and fly to the summit marker.</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c1.2-4.2 4-6 7-6s5.8 1.8 7 6" stroke-linecap="round"/></svg>
+      <h2>Personalized</h2>
+      <p>Profile inputs such as weight, height and fitness shape the project's calorie, BMI and trip-budget estimates.</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M8.5 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2>Preparation focused</h2>
+      <p>Dedicated route dossiers, a persistent gear checklist and a shortlist keep the important planning details close at hand.</p>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:20px">
+    <div class="field-tab">Project stack</div>
+    <h2>Built to demonstrate practical data &amp; front-end skills</h2>
+    <p class="muted large">The wider Summit Scout concept can use Python for data processing and API integration, SQL or MongoDB for route and user data, and Power BI or Tableau for analytics on top of the same dataset.</p>
+    <div class="stack-list">
+      <div><b>Front end</b><span>HTML, CSS, vanilla JS, Three.js for the 3D explorer</span></div>
+      <div><b>Data layer</b><span>Structured trek dataset with 13 routes and waypoints</span></div>
+      <div><b>Persistence</b><span>Shortlist, checklist progress and last plan via localStorage</span></div>
+    </div>
+    <a class="button button-primary" style="margin-top:20px" href="treks.html">Explore the 13-trek dataset →</a>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

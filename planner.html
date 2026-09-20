@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trek Planner | Summit Scout</title>
+<meta name="description" content="Build a personal trek estimate — difficulty score, calorie needs, BMI and a trip budget, based on your profile.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="planner">
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="field-tab">Personalized planning</div>
+    <h1>Trek planner</h1>
+    <p>Choose a route and enter a profile to generate demonstration estimates for difficulty, calories, BMI and trip budget.</p>
+  </div>
+</section>
+
+<main class="container main">
+  <div class="analysis-layout">
+    <section>
+      <div class="panel">
+        <div class="field-tab">Route</div>
+        <div class="title"><h2>Choose your trek</h2><a class="muted" href="treks.html">Browse collection →</a></div>
+        <label class="muted" style="display:block">Selected route
+          <select id="trek" style="margin-top:8px"></select>
+        </label>
+      </div>
+      <form class="panel" id="analysisForm">
+        <div class="field-tab">Profile</div>
+        <div class="title"><h2>Your profile</h2><span class="muted">Used for estimates</span></div>
+        <div class="form">
+          <label>Age<input id="age" type="number" value="21" min="10" max="100"></label>
+          <label>Weight (kg)<input id="weight" type="number" value="65" min="30" max="200"></label>
+          <label>Height (cm)<input id="height" type="number" value="170" min="100" max="230"></label>
+          <label>Fitness level<select id="fitness"><option>Moderate</option><option>Beginner</option><option>Good</option><option>Excellent</option></select></label>
+        </div>
+        <button class="button button-primary" style="margin-top:20px" type="submit">Run analysis</button>
+      </form>
+      <div class="tip">This planner is a portfolio project. Its calculations are illustrative estimates and should not replace professional medical, weather, financial or route guidance.</div>
+    </section>
+
+    <aside>
+      <div class="panel sticky-card">
+        <div class="field-tab">Results</div>
+        <h2>Analysis for <span data-route-name>Rupin Pass</span></h2>
+        <p id="analysisText" class="muted large">Loading route analysis…</p>
+        <div class="result-grid">
+          <div class="result"><strong id="rScore">58.8</strong><small>Difficulty score</small></div>
+          <div class="result"><strong id="rCal">1,240</strong><small>Est. calories</small></div>
+          <div class="result"><strong id="rBmi">22.5</strong><small>BMI</small></div>
+          <div class="result"><strong id="rBudget">₹0</strong><small>Trip budget</small></div>
+        </div>
+        <div class="alert-ok" id="plannerRisk" style="margin-top:20px"><b>Standard context</b><p>Run the analysis to see route-specific risk context here.</p></div>
+        <a class="button button-secondary full" href="dashboard.html">Open dashboard →</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/planner.js"></script>
+</body>
+</html>
