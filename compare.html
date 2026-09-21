@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compare Treks | Summit Scout</title>
+<meta name="description" content="Compare up to three Himalayan treks side by side — altitude, distance, duration, difficulty and season.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="compare">
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="field-tab">Side-by-side</div>
+    <h1>Compare treks</h1>
+    <p>Select up to three routes to weigh altitude, distance, duration, season and difficulty against each other before you commit.</p>
+  </div>
+</section>
+
+<main class="container main">
+  <div class="compare-count-row">
+    <div class="field-tab" style="margin:0">Pick your routes</div>
+    <span class="muted" id="compareCount">0 / 3 selected</span>
+  </div>
+  <div class="compare-picker" id="comparePicker"></div>
+
+  <div class="section-head"><div><div class="field-tab">Comparison</div><h2>How these routes stack up</h2></div></div>
+  <div id="compareResult"></div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js"></script>
+<script src="storage.js"></script>
+<script src="nav.js"></script>
+<script src="compare.js"></script>
+</body>
+</html>

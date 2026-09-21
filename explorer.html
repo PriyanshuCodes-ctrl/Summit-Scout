@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live 3D Map | Summit Scout</title>
+<meta name="description" content="Explore Himalayan treks on a live Google 3D terrain map with route overlays, camps, GPS location and GPX track loading.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="explorer">
+<header id="site-header"></header>
+
+<div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
+<section class="live-map-header">
+  <div class="container live-map-header-inner">
+    <div>
+      <div class="field-tab">Google 3D terrain</div>
+      <h1 id="explorerTitle">Loading trek…</h1>
+      <p id="explorerSubtitle">Real geographic terrain with a Summit Scout route overlay.</p>
+    </div>
+    <label class="field live-map-switcher">
+      <span class="muted">Switch trek</span>
+      <select id="trekSwitcher"></select>
+    </label>
+  </div>
+</section>
+
+<main class="live-map-layout">
+  <section class="live-map-panel">
+    <div class="live-map-toolbar">
+      <div class="map-mode-group" aria-label="Map mode">
+        <button class="map-chip active" id="mode3d" type="button">3D terrain</button>
+        <button class="map-chip" id="modeSatellite" type="button">Satellite</button>
+        <button class="map-chip" id="modeTop" type="button">Top-down</button>
+      </div>
+      <div class="map-action-group">
+        <button class="map-chip" id="mapLocate" type="button">⌖ My location</button>
+        <button class="map-chip" id="mapReset" type="button">Reset view</button>
+        <button class="map-chip" id="mapSummit" type="button">Fly to high point</button>
+        <button class="map-chip" id="mapFullscreen" type="button">Fullscreen</button>
+      </div>
+    </div>
+
+    <div id="google3dMap" class="google-3d-map" aria-label="Interactive Google 3D terrain map">
+      <div class="map-status-card" id="mapStatus">
+        <strong>Google 3D map setup required</strong>
+        <span>Add your API key in <code>maps-config.js</code>, then refresh this page.</span>
+      </div>
+      <div class="map-corner-badge"><span></span> REAL MAP TERRAIN</div>
+      <div class="map-instructions">Drag to move · Scroll to zoom · Ctrl/drag to tilt</div>
+    </div>
+
+    <div class="route-timeline" id="routeTimeline"></div>
+  </section>
+
+  <aside class="live-route-sidebar">
+    <div class="sidebar-top"><span class="live-dot"></span> Trek navigation</div>
+    <div class="map-sidebar-title">
+      <small id="mapRegion">—</small>
+      <h2 id="mapTrekName">—</h2>
+      <p id="mapTrekStart">—</p>
+    </div>
+
+    <div class="map-stat-grid">
+      <div><span>High point</span><strong id="mapAltitude">—</strong><em>elevation</em></div>
+      <div><span>Distance</span><strong id="mapDistance">—</strong><em>route length</em></div>
+      <div><span>Duration</span><strong id="mapDuration">—</strong><em>estimated days</em></div>
+      <div><span>Difficulty</span><strong id="mapDifficulty">—</strong><em id="mapScore">field score —</em></div>
+    </div>
+
+    <div class="snow-profile-card">
+      <div class="card-heading"><span>Mountain profile</span><b>ALPINE VIEW</b></div>
+      <div class="profile-art" id="profileArt" aria-label="Illustrative mountain elevation profile"></div>
+      <div class="profile-scale"><span>Trailhead</span><span>High point</span></div>
+    </div>
+
+    <div class="field-conditions">
+      <div class="condition-icon">✦</div>
+      <div><span>EXPEDITION NOTE</span><strong id="conditionTitle">Snow-ready route</strong><p id="conditionText">Layering and traction can matter on exposed high sections.</p></div>
+    </div>
+
+    <div class="map-waypoint-card" id="waypointCard">
+      <span class="site-kicker">Selected waypoint</span>
+      <h3>Choose a camp marker</h3>
+      <p>Click a marker on the map or use the waypoint strip below the map.</p>
+    </div>
+
+    <div class="map-gpx-box">
+      <div class="gpx-head"><span>LIVE GPS ROUTE</span><i>GPX</i></div>
+      <div>
+        <strong>Bring the real trail data</strong>
+        <p>Load a verified GPX track and Summit Scout will draw the actual GPS path over Google's terrain.</p>
+      </div>
+      <label class="button button-secondary full gpx-button">
+        Load GPX track
+        <input id="gpxInput" type="file" accept=".gpx,application/gpx+xml" hidden>
+      </label>
+      <div class="gpx-result" id="gpxResult">No GPX loaded — showing an illustrative route overlay.</div>
+    </div>
+
+    <div class="map-legend"><div class="legend-title">MAP LEGEND</div>
+      <div><i class="legend-dot base"></i><span>Basecamp / start</span></div>
+      <div><i class="legend-dot camp"></i><span>Camp / waypoint</span></div>
+      <div><i class="legend-dot summit"></i><span>High point / summit</span></div>
+      <div><i class="legend-line"></i><span>Route track</span></div>
+    </div>
+
+    <a class="button button-primary full" id="planCta" href="planner.html">Plan this trek</a>
+    <a class="button button-secondary full" id="dossierCta" href="trek.html">Open route dossier</a>
+  </aside>
+</main>
+
+<section class="container live-map-note">
+  <strong>Map accuracy note:</strong> Google provides the real geographic base terrain and imagery. The built-in Summit Scout route line is illustrative until you load or add a verified GPX track. Always confirm current routes, camps, closures, permits and local conditions before trekking.
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js"></script>
+<script src="storage.js"></script>
+<script src="nav.js"></script>
+<script src="maps-config.js"></script>
+<script src="explorer.js"></script>
+</body>
+</html>

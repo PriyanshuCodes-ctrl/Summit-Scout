@@ -1,0 +1,51 @@
+SUMMIT SCOUT — GOOGLE 3D MAP SETUP
+===================================
+
+Your new explorer uses Google's real 3D map terrain/imagery.
+It will intentionally show a setup message until you add your own API key.
+
+BEGINNER SETUP
+--------------
+1. Open: https://console.cloud.google.com/
+2. Create/select a Google Cloud project.
+3. Open Google Maps Platform.
+4. Enable "Maps JavaScript API".
+5. Enable billing for the project (Google requires billing for production Maps JavaScript API use).
+6. Go to Google Maps Platform > Keys & Credentials.
+7. Create an API key.
+8. Open maps-config.js in this project.
+9. Replace:
+   PASTE_YOUR_GOOGLE_MAPS_API_KEY_HERE
+   with your key.
+
+IMPORTANT SECURITY SETUP
+------------------------
+Because this is a GitHub Pages website, the browser must receive the key.
+Protect it with Google Cloud restrictions:
+
+Application restriction: Websites (HTTP referrers)
+Add these referrers:
+  https://priyanshucodes-ctrl.github.io/*
+  https://priyanshucodes-ctrl.github.io/Summit-Scout/*
+
+API restriction:
+  Restrict key -> Maps JavaScript API
+
+Then save.
+
+GITHUB
+------
+Upload all files from this ZIP to the ROOT of your Summit-Scout repository.
+The project uses a flat structure, matching your current GitHub repository.
+
+REAL ROUTE DATA
+---------------
+The Google base terrain/imagery is real.
+The built-in blue trek route is an illustrative overlay so the UI works immediately.
+To show an actual recorded route:
+1. Open Explorer.
+2. Click "Load GPX track".
+3. Choose a .gpx file for the trek.
+The browser will draw the GPX track directly over Google's 3D terrain.
+
+For a permanent public route, later add verified GPX/GeoJSON data to the project instead of requiring each visitor to upload a file.
